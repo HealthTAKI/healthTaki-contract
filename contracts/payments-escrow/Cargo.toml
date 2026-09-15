@@ -1,0 +1,19 @@
+[package]
+name = "healthtaki-payments-escrow"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Soroban contract that escrows Stellar-network payments from patients to medical providers until the provider confirms service or a refund window opens."
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+doctest = false
+
+[dependencies]
+soroban-sdk = { workspace = true }
+
+[dev-dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }
+
+[features]
+testutils = ["soroban-sdk/testutils"]
